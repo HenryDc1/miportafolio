@@ -1,25 +1,64 @@
 ---
-const PROJECTS =[
-    {
-        title: 'Preguntados - Juego de preguntas con niveles, comodines y ranking',
-        description: 'Pagina creada con PHP como backend y como frontend HTML, CSS Y JS nativos',
-        github:'https://github.com/HenryDc1/JuegoQuienQuiereSerMillonario',
-        image:'/public/millonario.png',
-        tags:['PHP', 'JavaScript','HTML', 'CSS', ]
-    }
-]
+import php from "../icons/PHP.astro";
+import js from "../icons/JS.astro";
+import HTML from "../icons/Html.astro";
+import CSS from "../icons/CSS.astro";
+const TAGS = {
+  PHP: {
+    name: "php",
+    class: "bg-[#4F5B93] text-white",
+    icon: php,
+  },
+  JS: {
+    name: "JavaScript",
+    class: "bg-[#d4d44a] text-white",
+    icon: js,
+  },
+  HTML: {
+    name: "HTML",
+    class: "bg-[#af1313d9] text-white",
+    icon: HTML,
+  },
+  CSS: {
+    name: "CSS",
+    class: "bg-[#42b8fd] text-white",
+    icon: CSS,
+  },
+};
+const PROJECTS = [
+  {
+    title: "Preguntados - Juego de preguntas con niveles, comodines y ranking",
+    description:
+      "Pagina creada con PHP como backend y como frontend HTML, CSS Y JS nativos",
+    github: "https://github.com/HenryDc1/JuegoQuienQuiereSerMillonario",
+    image: "/dist/millonario.png",
+    tags: [TAGS.PHP, TAGS.JS, TAGS.HTML, TAGS.CSS],
+  },
+];
 ---
+
 {
-    PROJECTS.map(project =>(
-        <article>
-            <h3 class="text-2xl font-semibold">{project.title}</h3>
-            <p class="text-lg mb-4 text-pretty">{project.description}</p>
-            <ul>
-                {project.tags.map(tag=>(
-                    <li>{tag}</li>
-                ))}
-            </ul>
-            <img class="rounded shadow-2x1 "src={project.image} alt={`Captura de pantalla del proyecto ${project.image}`}>
-        </article>
-    ))
+  PROJECTS.map((project) => (
+    <article class=" rounded-sm border border-solid border-black-500 p-4 ">
+      <h3 class="text-2xl font-semibold">{project.title}</h3>
+      <p class="text-lg mb-4 text-pretty">{project.description}</p>
+      <ul class="flex gap-x-2 flex-row mb-5" >
+        {project.tags.map((tag) => (
+          <li>
+            <span
+              class={`flex gap-x-2 rounded-full text-sm  ${tag.class} py-1 px-2`}
+            >
+              <tag.icon class="size-5" />
+              {tag.name}
+            </span>
+          </li>
+        ))}
+      </ul>
+      <img
+        class="rounded-xl shadow-2x1 "
+        src={project.image}
+        alt={`Captura de pantalla del proyecto ${project.image}`}
+      />
+    </article>
+  ))
 }
