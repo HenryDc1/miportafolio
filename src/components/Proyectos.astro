@@ -1,0 +1,25 @@
+---
+const PROJECTS =[
+    {
+        title: 'Preguntados - Juego de preguntas con niveles, comodines y ranking',
+        description: 'Pagina creada con PHP como backend y como frontend HTML, CSS Y JS nativos',
+        github:'https://github.com/HenryDc1/JuegoQuienQuiereSerMillonario',
+        image:'/public/millonario.png',
+        tags:['PHP', 'JavaScript','HTML', 'CSS', ]
+    }
+]
+---
+{
+    PROJECTS.map(project =>(
+        <article>
+            <h3 class="text-2xl font-semibold">{project.title}</h3>
+            <p class="text-lg mb-4 text-pretty">{project.description}</p>
+            <ul>
+                {project.tags.map(tag=>(
+                    <li>{tag}</li>
+                ))}
+            </ul>
+            <img class="rounded shadow-2x1 "src={project.image} alt={`Captura de pantalla del proyecto ${project.image}`}>
+        </article>
+    ))
+}

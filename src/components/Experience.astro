@@ -1,0 +1,33 @@
+---
+import ExperienceItem from "./ExperienceItem.astro";
+const EXPERIENCE = [
+  {
+    date: "Abril 2023- Septiembre 2023",
+    title: "Asociado de Inventario  - Footlocker",
+    description: "Era el responsable de gestionar el inventario, recibir mercancía, mantener el orden y ayudar en las tareas de logística | ERP Oracle",
+    link: "#",
+  },
+  {
+    date: "Octubre 2021- Abril 2022",
+    title: "Administrativo de nóminas - DHL",
+    description: "Mis tareas consistian en calcular las nominas de los empleados y dar soporte a mis compañeros | Excel, Microsoft Word, Microsoft PowerPoint",
+    link: "#",
+  },
+  {
+    date: "Junio 2020 - Noviembre 2020",
+    title: "Auxiliar Administrativo - Aplica",
+    description: "Me encargaba de realizar tareas de gestión , como por ejemplo gestionar altas y bajas de empleados, gestionar facturas, elaborar albaránes y contabilidad | Excel, Contaplus, FacturaPlus ",
+    link: "#",
+  },
+];
+---
+
+<ol class="relative border-s border-gray-200 dark:border-gray-700 ml-3">
+  {
+    EXPERIENCE.map((experience) => (
+      <li class="mb-10 ms-4">
+        <ExperienceItem {...experience} />
+      </li>
+    ))
+  }
+</ol>
