@@ -3,6 +3,7 @@ import php from "../icons/PHP.astro";
 import js from "../icons/JS.astro";
 import HTML from "../icons/Html.astro";
 import CSS from "../icons/CSS.astro";
+import Node from "../icons/Node.astro";
 const TAGS = {
   PHP: {
     name: "php",
@@ -24,6 +25,11 @@ const TAGS = {
     class: "bg-[#42b8fd] text-white",
     icon: CSS,
   },
+  NODE: {
+    name: "NodeJS",
+    class: "bg-[#43853d] text-white",
+    icon: Node,
+  },
 };
 const PROJECTS = [
   {
@@ -34,31 +40,41 @@ const PROJECTS = [
     image: "/millonario.png",
     tags: [TAGS.PHP, TAGS.JS, TAGS.HTML, TAGS.CSS],
   },
+  {
+    title: "Gestor Base de Datos Web - Gestor de tablas en MYSQL",
+    description: "Gestor de BBDD creado con Node.js y JavaScript ",
+    github: "https://github.com/HenryDc1/GestorBBDD",
+    image: "/40shots_so.png",
+    tags: [TAGS.NODE, TAGS.JS, TAGS.HTML, TAGS.CSS],
+  },
 ];
 ---
 
 {
   PROJECTS.map((project) => (
     <article class=" rounded-sm border border-solid border-black-500 p-4 ">
-      <h3 class="text-2xl font-semibold">{project.title}</h3>
-      <p class="text-lg mb-4 text-pretty">{project.description}</p>
-      <ul class="flex gap-x-2 flex-row mb-5" >
-        {project.tags.map((tag) => (
-          <li>
-            <span
-              class={`flex gap-x-2 rounded-full text-sm  ${tag.class} py-1 px-2`}
-            >
-              <tag.icon class="size-5" />
-              {tag.name}
-            </span>
-          </li>
-        ))}
-      </ul>
-      <img
-        class="rounded-xl shadow-2x1 "
-        src={project.image}
-        alt={`Captura de pantalla del proyecto ${project.image}`}
-      />
+      <a href={project.github}>
+        <h3 class="text-2xl font-semibold">{project.title}</h3>
+        <p class="text-lg mb-4 text-pretty">{project.description}</p>
+        <ul class="flex gap-x-2 flex-row mb-5 flex-wrap">
+          {project.tags.map((tag) => (
+            <li>
+              <span
+                class={`flex gap-x-2 rounded-full text-sm  ${tag.class} py-1 px-2`}
+              >
+                <tag.icon class="size-5" />
+                {tag.name}
+              </span>
+            </li>
+          ))}
+        </ul>
+        <img
+          class="rounded-xl shadow-2x1 "
+          src={project.image}
+          alt={`Captura de pantalla del proyecto ${project.image}`}
+        />
+      </a>
     </article>
+    <br>
   ))
 }
