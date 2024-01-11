@@ -58,6 +58,16 @@ import Projects from "../components/Proyectos.astro";
       </h2>
       <Projects />
     </SectionContainer>
-  
+    <button id="nm">Celebrate!</button>
+    <script>
+      // Importa módulos npm.
+   
+      // Encuentra nuestro componente en la página.
+      const buttons = document.querySelectorAll('#nm');
+      // Agrega event listeners para disparar confetti cuando un botón es clickeado.
+      buttons.forEach((button) => {
+        button.addEventListener('click', () =>alert("hola"));
+      });
+    </script>
   </main>
 </Layout>
