@@ -4,6 +4,7 @@ import js from "../icons/JS.astro";
 import HTML from "../icons/Html.astro";
 import CSS from "../icons/CSS.astro";
 import Node from "../icons/Node.astro";
+import JQuery from "../icons/JQuery.astro";
 const TAGS = {
   PHP: {
     name: "php",
@@ -30,19 +31,32 @@ const TAGS = {
     class: "bg-[#43853d] text-white",
     icon: Node,
   },
+  JQuery:{
+    name: "JQuery",
+    class: "bg-[#afc5cf] text-white",
+    icon: JQuery,
+  }
 };
 const PROJECTS = [
   {
-    title: "Preguntados - Juego de preguntas con niveles, comodines y ranking",
+    title: "VOTAIETI - Web de votaciones",
     description:
-      "Pagina creada con PHP como backend y como frontend HTML, CSS Y JS nativos",
+      "Web de votaciones en la que el usuario se puede registrar para gestionar y crear encuestas, analizar botos y crear comunidad ",
+    github: "https://github.com/HenryDc1/VOTAIETI",
+    image: "/97shots_so.png",
+    tags: [TAGS.PHP, TAGS.JS, TAGS.JQuery,TAGS.HTML, TAGS.CSS],
+  },
+  {
+    title: "Preguntados - Juego de preguntas",
+    description:
+      "Jugo de preguntas por niveles , cada jugador dispone de tres comodines, ¡Si aciertas 18 preguntas seguidas ganas!.",
     github: "https://github.com/HenryDc1/JuegoQuienQuiereSerMillonario",
     image: "/millonario.png",
     tags: [TAGS.PHP, TAGS.JS, TAGS.HTML, TAGS.CSS],
   },
   {
     title: "Gestor Base de Datos Web - Gestor de tablas en MYSQL",
-    description: "Gestor de BBDD creado con Node.js y JavaScript ",
+    description: "Gestor de BBDD ideal para guardar datos en tablas , hacer inserts, recuperar datos, crear tablas y muchas más opciones. ",
     github: "https://github.com/HenryDc1/GestorBBDD",
     image: "/40shots_so.png",
     tags: [TAGS.NODE, TAGS.JS, TAGS.HTML, TAGS.CSS],
@@ -52,29 +66,31 @@ const PROJECTS = [
 
 {
   PROJECTS.map((project) => (
-    <article class=" rounded-sm border border-solid border-black-500 p-4 ">
-      <a href={project.github}>
-        <h3 class="text-2xl font-semibold">{project.title}</h3>
-        <p class="text-lg mb-4 text-pretty">{project.description}</p>
-        <ul class="flex gap-x-2 flex-row mb-5 flex-wrap">
-          {project.tags.map((tag) => (
-            <li>
-              <span
-                class={`flex gap-x-2 rounded-full text-sm  ${tag.class} py-1 px-2`}
-              >
-                <tag.icon class="size-5" />
-                {tag.name}
-              </span>
-            </li>
-          ))}
-        </ul>
-        <img
-          class="rounded-xl shadow-2x1 "
-          src={project.image}
-          alt={`Captura de pantalla del proyecto ${project.image}`}
-        />
-      </a>
-    </article>
-    <br>
+    <>
+      <article class=" rounded-sm border border-solid border-black-500 p-4 ">
+        <a href={project.github}>
+          <h3 class="text-2xl font-semibold">{project.title}</h3>
+          <p class="text-lg mb-4 text-pretty">{project.description}</p>
+          <ul class="flex gap-x-2 flex-row mb-5 flex-wrap">
+            {project.tags.map((tag) => (
+              <li>
+                <span
+                  class={`flex gap-x-2 rounded-full text-sm  ${tag.class} py-1 px-2`}
+                >
+                  <tag.icon class="size-5" />
+                  {tag.name}
+                </span>
+              </li>
+            ))}
+          </ul>
+          <img
+            class="rounded-xl shadow-2x1 "
+            src={project.image}
+            alt={`Captura de pantalla del proyecto ${project.image}`}
+          />
+        </a>
+      </article>
+      <br />
+    </>
   ))
 }
