@@ -10,7 +10,6 @@ import SectionContainer from "../components/SectionContainer.astro";
 import ExperienceIcon from "../icons/ExperiencieIcon.astro";
 import ProjectIcon from "../icons/ProjectIcon.astro";
 import Projects from "../components/Proyectos.astro";
-
 ---
 
 <Layout
@@ -18,13 +17,17 @@ import Projects from "../components/Proyectos.astro";
   description="Contrata a Henry Doudo para crear aplicaciones web. Desarrollador web y Adminsitrativo. Especializado en productos"
 >
   <main class="px-4">
-    <SectionContainer id="inicio" class="py-44 pb-32" >
-		<img class="rounded-full w-20 h-20 mb-5" src="/mifoto.jpg" alt="Henry photo">
+    <SectionContainer id="inicio" class="py-44 pb-32">
+      <img
+        class="rounded-full w-20 h-20 mb-5"
+        src="/mifoto.jpg"
+        alt="Henry photo"
+      />
       <h1 class="text-3xl md:text-4xl font-bold flex flex-row gap-x-4 lg:pb-10">
         Hey, soy Henry 👨‍💻
       </h1>
       <h2 class="text-xl lg:text-2xl opacity-80 text-wrap max-w-[700px]">
-        <span class="opacity-80">Desarollador web y Administrativo</span>. De
+        <span class="opacity-90 text-blue-500/90">Desarollador web y Administrativo</span>. De
         Barcelona, España. Con amplios <span class="text-yellow-500/90"
           >conocimientos en gestión de empresas y productos</span
         >. Especializado en crear soluciones eficientes y atractivas.
@@ -32,46 +35,49 @@ import Projects from "../components/Proyectos.astro";
       <nav class="flex gap-4 mt-8 flex-wrap">
         <SocialNet href="https://www.linkedin.com/in/henry-doudo-349ba922b/">
           <Linkedin class="w-4 h-4" />
-           LinkedIn
+          LinkedIn
         </SocialNet>
         <SocialNet href="https://github.com/HenryDc1">
           <GitHub class="w-4 h-4" />
-           GitHub
+          GitHub
         </SocialNet>
         <SocialNet href="mailto:henrydcaicedo@hotmail.com">
           <Email class="w-3 h-3" />
-           henrydcaicedo@hotmail.com
+          henrydcaicedo@hotmail.com
         </SocialNet>
         <SocialNet href="tel:+34635327676">
           <Phone class="w-3 h-3" />
-           +34 635327676
+          +34 635327676
         </SocialNet>
       </nav>
     </SectionContainer>
     <SectionContainer id="experiencia">
       <h2 class="text-3xl font-semibold mb-4 flex gap-x-3 items-center">
         <ExperienceIcon class="size-7" />
-         Experiencia laboral
+        Experiencia laboral
       </h2>
       <Experience />
     </SectionContainer>
 
     <SectionContainer>
-      <h2 id="proyectos"class="text-3xl font-semibold mb-4 flex gap-x-3 items-center">
+      <h2
+        id="proyectos"
+        class="text-3xl font-semibold mb-4 flex gap-x-3 items-center"
+      >
         <ProjectIcon class="size-7" />
-         Proyectos
+        Proyectos
       </h2>
       <Projects />
     </SectionContainer>
     <button id="nm">Celebrate!</button>
     <script>
       // Importa módulos npm.
-   
+
       // Encuentra nuestro componente en la página.
-      const buttons = document.querySelectorAll('#nm');
+      const buttons = document.querySelectorAll("#nm");
       // Agrega event listeners para disparar confetti cuando un botón es clickeado.
       buttons.forEach((button) => {
-        button.addEventListener('click', () =>alert("hola"));
+        button.addEventListener("click", () => alert("hola"));
       });
     </script>
   </main>
