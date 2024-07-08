@@ -5,6 +5,8 @@ import HTML from "../icons/Html.astro";
 import CSS from "../icons/CSS.astro";
 import Node from "../icons/Node.astro";
 import JQuery from "../icons/JQuery.astro";
+import Django from "../icons/Django.astro";
+import Tailwind from "../icons/Tailwind.astro";
 const TAGS = {
   PHP: {
     name: "php",
@@ -35,8 +37,17 @@ const TAGS = {
     name: "JQuery",
     class: "bg-[#afc5cf] text-white",
     icon: JQuery,
-  }
-};
+  },
+  Django:{
+    name: "Django",
+    class: "bg-[#508b74f7] text-white",
+    icon: Django,
+},
+Tailwind:{
+    name: "Tailwind CSS",
+    class: "bg-[#42b8fd] text-white",
+    icon: Tailwind,
+  },};
 const PROJECTS = [
 {
     title: "Biblioteca Mari Carmen - Biblioteca online",
@@ -44,7 +55,7 @@ const PROJECTS = [
       "Biblioteca online creada y diseñada para aportar una versión digitalizada de la bibliotecas que conocemos de toda la vida.",
     github: "https://github.com/HenryDc1/VOTAIETI",
     image: "/941shots_so.png",
-    tags: [TAGS.PHP, TAGS.JS, TAGS.JQuery,TAGS.HTML, TAGS.CSS],
+    tags: [TAGS.Django, TAGS.JS, TAGS.JQuery,TAGS.HTML, TAGS.Tailwind],
   },
   {
     title: "VOTAIETI - Web de votaciones",
